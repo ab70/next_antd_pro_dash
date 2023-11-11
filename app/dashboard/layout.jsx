@@ -71,6 +71,7 @@ export default function RootLayout({
                                     width: '331px',
                                 },
                             ]}
+                            
                             {...defaultProps}
                             location={{
                                 pathname,
