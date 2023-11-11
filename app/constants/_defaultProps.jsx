@@ -1,11 +1,8 @@
 import {
-  ChromeFilled,
   CrownFilled,
-  SmileFilled,
-  TabletFilled,
 } from '@ant-design/icons';
 
-export default {
+const defaultProps = {
   route: {
     path: '/',
     routes: [
@@ -109,3 +106,4 @@ export default {
     },
   ],
 };
+ export default defaultProps

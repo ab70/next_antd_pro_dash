@@ -1,10 +1,6 @@
-import { useEffect, useState } from "react";
-
-
+"use client"
 export default function RootLayout({
   children, // will be a page or nested layout
-}: {
-  children: React.ReactNode
 }) {
 
 

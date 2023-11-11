@@ -21,7 +21,7 @@ import styles from "./style.module.css"
 import Image from 'next/image'
 // import niamOfficiallogo from "../public/niamofficiallogo.png"
 
-export default () => {
+const Home = () => {
     const [domLoaded, setDomLoaded] = useState(false);
 
     useEffect(() => {
@@ -200,3 +200,5 @@ export default () => {
 
     );
 };
+
+export default Home

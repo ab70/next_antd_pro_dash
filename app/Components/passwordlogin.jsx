@@ -1,18 +1,9 @@
-
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    AlipayOutlined,
     LockOutlined,
-    MobileOutlined,
-    TaobaoOutlined,
     UserOutlined,
-    WeiboOutlined,
 } from '@ant-design/icons';
 import {
-    LoginFormPage,
-    ProConfigProvider,
-    ProFormCaptcha,
-    ProFormCheckbox,
     ProFormText,
 } from '@ant-design/pro-components';
 export default function PasswordLogin() {

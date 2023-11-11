@@ -40,130 +40,128 @@ export default function RootLayout({
     }, []);
 
     return (
-        <html lang="en">
+        <>
             {
                 domLoaded ? (
 
-                    <body className={inter.className}>
-                        <div
-                            id="test-pro-layout"
-                            style={{
-                                height: '100vh',
+                    <div
+                        id="test-pro-layout"
+                        style={{
+                            height: '100vh',
+                        }}
+                    >
+                        <ProLayout
+                            bgLayoutImgList={[
+                                {
+                                    src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
+                                    left: 85,
+                                    bottom: 100,
+                                    height: '303px',
+                                },
+                                {
+                                    src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
+                                    bottom: -68,
+                                    right: -45,
+                                    height: '303px',
+                                },
+                                {
+                                    src: 'https://img.alicdn.com/imgextra/i3/O1CN018NxReL1shX85Yz6Cx_!!6000000005798-2-tps-884-496.png',
+                                    bottom: 0,
+                                    left: 0,
+                                    width: '331px',
+                                },
+                            ]}
+                            {...defaultProps}
+                            location={{
+                                pathname,
                             }}
-                        >
-                            <ProLayout
-                                bgLayoutImgList={[
-                                    {
-                                        src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
-                                        left: 85,
-                                        bottom: 100,
-                                        height: '303px',
-                                    },
-                                    {
-                                        src: 'https://img.alicdn.com/imgextra/i2/O1CN01O4etvp1DvpFLKfuWq_!!6000000000279-2-tps-609-606.png',
-                                        bottom: -68,
-                                        right: -45,
-                                        height: '303px',
-                                    },
-                                    {
-                                        src: 'https://img.alicdn.com/imgextra/i3/O1CN018NxReL1shX85Yz6Cx_!!6000000005798-2-tps-884-496.png',
-                                        bottom: 0,
-                                        left: 0,
-                                        width: '331px',
-                                    },
-                                ]}
-                                {...defaultProps}
-                                location={{
-                                    pathname,
-                                }}
-                                menu={{
-                                    type: 'group',
-                                }}
-                                avatarProps={{
-                                    src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
-                                    size: 'small',
-                                    title: '七妮妮',
-                                }}
-                                actionsRender={(props) => {
-                                    if (props.isMobile) return [];
-                                    return [
-                                        <InfoCircleFilled key="InfoCircleFilled" />,
-                                        <QuestionCircleFilled key="QuestionCircleFilled" />,
-                                        <GithubFilled key="GithubFilled" />,
-                                    ];
-                                }}
-                                menuFooterRender={(props) => {
-                                    if (props?.collapsed) return undefined;
-                                    return (
-                                        <div
-                                            style={{
-                                                textAlign: 'center',
-                                                paddingBlockStart: 12,
-                                            }}
-                                        >
-                                            <div>© 2023 Made with love</div>
-                                            <div>by <b style={{ color: "blueviolet" }}>A</b>brar</div>
-                                        </div>
-                                    );
-                                }}
-                                onMenuHeaderClick={(e) => console.log(e)}
-                                title="nIAM"
-                                logo="https://niam-next.vercel.app/_next/image?url=%2Fimages%2Fniamofficiallogo.png&w=256&q=75"
-/*-------------------------It renders in left drawer ----------------------------------*/    
-                                // menuHeaderRender={(logo, title) => (
-                                //     <div
-                                //         id="customize_menu_header"
-                                //         style={{
-                                //             height: '32px',
-                                //             display: 'flex',
-                                //             alignItems: 'center',
-                                //             gap: 8,
-                                //         }}
-
-                                //     >
-                                //         {logo}
-                                //         {/* {title} */}
-                                //     </div>
-                                // )}
-/*------------------------------it renders at navbar-----------------------*/ 
-                                headerTitleRender={(logo, title, _) => {
-                                    return (
-                                        <a>
-                                            {logo}
-                                            {/* {title} */}
-                                        </a>
-                                    );
-                                }}
-                                
-                                menuItemRender={(item, dom) => (
+                            menu={{
+                                type: 'group',
+                            }}
+                            avatarProps={{
+                                src: 'https://gw.alipayobjects.com/zos/antfincdn/efFD%24IOql2/weixintupian_20170331104822.jpg',
+                                size: 'small',
+                                title: '七妮妮',
+                            }}
+                            actionsRender={(props) => {
+                                if (props.isMobile) return [];
+                                return [
+                                    <InfoCircleFilled key="InfoCircleFilled" />,
+                                    <QuestionCircleFilled key="QuestionCircleFilled" />,
+                                    <GithubFilled key="GithubFilled" />,
+                                ];
+                            }}
+                            menuFooterRender={(props) => {
+                                if (props?.collapsed) return undefined;
+                                return (
                                     <div
-                                        onClick={() => {
-                                            setPathname(item.path || '/welcome');
-                                        }}
-                                    >
-                                        {dom}
-                                    </div>
-                                )}
-                                {...settings}
-                            >
-                                <PageContainer breadcrumb={false} title={false}>
-                                    <ProCard
                                         style={{
-                                            height: '100vh',
-                                            minHeight: 800,
+                                            textAlign: 'center',
+                                            paddingBlockStart: 12,
                                         }}
                                     >
-                                        {children}
-                                    </ProCard>
-                                </PageContainer>
-                            </ProLayout>
-                        </div>
-                    </body>
+                                        <div>© 2023 Made with love</div>
+                                        <div>by <b style={{ color: "blueviolet" }}>A</b>brar</div>
+                                    </div>
+                                );
+                            }}
+                            onMenuHeaderClick={(e) => console.log(e)}
+                            title="nIAM"
+                            logo="https://niam-next.vercel.app/_next/image?url=%2Fimages%2Fniamofficiallogo.png&w=256&q=75"
+                            /*-------------------------It renders in left drawer ----------------------------------*/
+                            // menuHeaderRender={(logo, title) => (
+                            //     <div
+                            //         id="customize_menu_header"
+                            //         style={{
+                            //             height: '32px',
+                            //             display: 'flex',
+                            //             alignItems: 'center',
+                            //             gap: 8,
+                            //         }}
+
+                            //     >
+                            //         {logo}
+                            //         {/* {title} */}
+                            //     </div>
+                            // )}
+                            /*------------------------------it renders at navbar-----------------------*/
+                            headerTitleRender={(logo, title, _) => {
+                                return (
+                                    <a>
+                                        {logo}
+                                        {/* {title} */}
+                                    </a>
+                                );
+                            }}
+
+                            menuItemRender={(item, dom) => (
+                                <div
+                                    onClick={() => {
+                                        setPathname(item.path || '/welcome');
+                                    }}
+                                >
+                                    {dom}
+                                </div>
+                            )}
+                            {...settings}
+                        >
+                            <PageContainer breadcrumb={false} title={false}>
+                                <ProCard
+                                    style={{
+                                        height: '100vh',
+                                        minHeight: 800,
+                                    }}
+                                >
+                                    {children}
+                                </ProCard>
+                            </PageContainer>
+                        </ProLayout>
+                    </div>
+
 
                 ) : null
             }
-
-        </html>
+        </>
 
     )
 }

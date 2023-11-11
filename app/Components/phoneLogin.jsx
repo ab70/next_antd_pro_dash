@@ -1,11 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
-    AlipayOutlined,
     LockOutlined,
     MobileOutlined,
-    TaobaoOutlined,
-    UserOutlined,
-    WeiboOutlined,
+
 } from '@ant-design/icons';
 import {
     LoginFormPage,
